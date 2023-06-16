@@ -15,3 +15,14 @@ img {
 #imageSliderCtn {
     display: flex;
 }
+
+.imgBtn {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+
+
+.hideImg {
+    display: none;
+}

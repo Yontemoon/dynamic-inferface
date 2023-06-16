@@ -7,9 +7,7 @@ btn.addEventListener('mouseover', () => {
 btn.addEventListener('click', showMenu);
 
 
-//click on the button to popup a menu
-//True = its active
-//
+
 function showMenu() {
         const menuSec = document.getElementById('menuSec');
         menuSec.setAttribute('class', 'show');
@@ -34,3 +32,40 @@ function hideMenu(section) {
 
 
 const imageSliderCtn = document.getElementById('imageSliderCtn');
+const previousImg = document.getElementById('previous');
+const nextImg = document.getElementById('next');
+
+nextImg.addEventListener('click', getNextImg);
+previousImg.addEventListener('click', getPreviousImage)
+
+
+function getNextImg() {
+    const currentImg = document.querySelector(".showImg");
+    let nextImg = currentImg.nextElementSibling;
+    if (nextImg === null) {
+        nextImg = document.getElementById('startingImage');
+    }
+    toggleClass(currentImg);
+    toggleClass(nextImg);
+}
+
+function toggleClass(changingImage) {
+    if(changingImage.className === 'showImg') {
+        changingImage.classList.remove('showImg');
+        changingImage.classList.add('hideImg');
+    } else {
+        changingImage.classList.remove('hideImg')
+        changingImage.classList.add('showImg')
+
+    }
+}
+
+function getPreviousImage() {
+    const currentImg = document.querySelector(".showImg");
+    let nextImg = currentImg.previousElementSibling;
+    if (nextImg === null) {
+        nextImg = document.getElementById('endingImage');
+    }
+    toggleClass(currentImg);
+    toggleClass(nextImg);
+}
