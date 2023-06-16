@@ -1,0 +1,17 @@
+
+.show {
+    display: 'block';
+}
+
+.hide {
+    display: none;
+}
+
+img {
+    max-width: 800px;
+    height: auto
+}
+
+#imageSliderCtn {
+    display: flex;
+}
